@@ -56,7 +56,9 @@ app.use(session({
         secure: 'auto'
     }
 }))
-
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
 app.use(cors({
     credentials:true,
     origin:'http://localhost:3000'
