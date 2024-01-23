@@ -1,6 +1,6 @@
-const express require("express");
-const { getAllPembayaran,getPembayaranById,addPembayaran,updatePembayaran,deletePembayaran,midtrans, cekSudahBayar, belumBayar } require("../controllers/pembayaranController.js");
-const { adminOnly, verifyUser } require("../middleware/AuthUser.js");
+const express = require("express");
+const { getAllPembayaran,getPembayaranById,addPembayaran,updatePembayaran,deletePembayaran,midtrans, cekSudahBayar, belumBayar } = require("../controllers/pembayaranController.js");
+const { adminOnly, verifyUser } = require("../middleware/AuthUser.js");
 
 
 const router = express.Router();
