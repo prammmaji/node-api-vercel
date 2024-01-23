@@ -1,6 +1,6 @@
-import {Sequelize} from "sequelize"
+const { Sequelize } = require("sequelize");
+const db = require("../config/koneksi.js");
 
-import db from "../config/koneksi.js"
 
 
 const {DataTypes} = Sequelize
