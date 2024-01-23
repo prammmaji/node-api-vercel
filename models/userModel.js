@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/koneksi.js');
 
-const User = db.sequelize.define('user', {
+const User = db.define('user', {
   // Definisikan kolom-kolom pada model pengguna
   role: {
     type: DataTypes.STRING,
