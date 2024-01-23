@@ -2,7 +2,7 @@
 const express = require("express");
 const db = require("./config/koneksi.js");
 const dotenv = require("dotenv");
-const cookieParser = require("cookie-parser");
+
 const cors = require("cors");
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -52,7 +52,7 @@ app.use(cors({
     credentials:true,
     origin:'http://localhost:3000'
 }));
-app.use(cookieParse());
+
 app.use(express.json());
 app.use(userRoute);
 app.use(pembayaranRoute);
