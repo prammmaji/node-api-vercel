@@ -14,18 +14,6 @@ import siswaRoute from "./routes/SiswaRoute.js"
 import authRoute from "./routes/authRoute.js"
 import laporanRoute from "./routes/laporanRoute.js"
 import SequelizeStore from "connect-session-sequelize"
-import { fileURLToPath } from 'url';
-import { dirname,join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const imagePath = join(__dirname, 'public', 'images');
-
-// ... kode lainnya ...
-
-
-// Menentukan middleware untuk memberikan akses ke gambar
 
 
 dotenv.config()
