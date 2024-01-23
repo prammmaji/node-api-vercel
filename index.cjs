@@ -26,7 +26,7 @@ const app = express();
     console.error("Error connecting to the database:", error);
   }
 })();
-app.use('/public/images', express.static(imagePath));
+
 
 const sessionStore = SequelizeStore(session.Store);
 
