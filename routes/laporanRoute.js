@@ -1,6 +1,11 @@
-import express from "express";
-import { hitung, laporanPembayaran, laporanSiswa, getKelas } from "../controllers/laporanController.js"
-import { verifyUser, adminOnly } from "../middleware/AuthUser.js"
+const express = require("express");
+const {
+  hitung,
+  laporanPembayaran,
+  laporanSiswa,
+  getKelas
+} = require("../controllers/laporanController.js");
+const { verifyUser, adminOnly } = require("../middleware/AuthUser.js");
 
 const router = express.Router();
 
@@ -9,4 +14,4 @@ router.get("/cetak/pembayaran", verifyUser, adminOnly, laporanPembayaran);
 router.get("/cetak/siswa", verifyUser, adminOnly, laporanSiswa);
 router.get("/getkelas", verifyUser, adminOnly, getKelas);
 
-export default router;
+module.exports = router;
