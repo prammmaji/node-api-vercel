@@ -1,45 +1,43 @@
-const { Sequelize } = require("sequelize");
-const db = require("../config/koneksi.js");
-
-
-
-const {DataTypes} = Sequelize
+const { DataTypes } = require('sequelize');
+const db = require('../config/koneksi.js');
 
 const User = db.sequelize.define('user', {
-    role: {
-        type: DataTypes.STRING,
+  // Definisikan kolom-kolom pada model pengguna
+  role: {
+    type: DataTypes.STRING,
+  },
+  uuid: {
+    type: DataTypes.STRING,
+    defaultValue: DataTypes.UUIDV4,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
     },
-    uuid: {
-        type: DataTypes.STRING,
-        defaultValue: DataTypes.UUIDV4,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    }, nama: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true,
-        }
+  },
+  nama: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
     },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true,
-            isEmail: true
-        }
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      isEmail: true,
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    }
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
+  },
 }, {
-    freezeTableName: true
-})
+  freezeTableName: true,
+});
 
-export default User;
+module.exports = User;
