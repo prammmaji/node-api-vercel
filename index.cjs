@@ -1,19 +1,18 @@
 
 const express = require("express");
-import db from "./config/koneksi.js"
-// import router from "./routes/index.js"
-import dotenv from "dotenv"
-import cookieParse from "cookie-parser"
-import cors from "cors"
-import session from "express-session"
-import bodyParser from "body-parser"
-import userRoute from "./routes/userRoute.js"
-import pembayaranRoute from "./routes/pembayaranRoute.js"
-import tagihanRoute from "./routes/tagihanRoute.js"
-import siswaRoute from "./routes/SiswaRoute.js"
-import authRoute from "./routes/authRoute.js"
-import laporanRoute from "./routes/laporanRoute.js"
-import SequelizeStore from "connect-session-sequelize"
+const db = require("./config/koneksi.js");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const userRoute = require("./routes/userRoute.js");
+const pembayaranRoute = require("./routes/pembayaranRoute.js");
+const tagihanRoute = require("./routes/tagihanRoute.js");
+const siswaRoute = require("./routes/SiswaRoute.js");
+const authRoute = require("./routes/authRoute.js");
+const laporanRoute = require("./routes/laporanRoute.js");
+const SequelizeStore = require("connect-session-sequelize");
 
 
 dotenv.config()
