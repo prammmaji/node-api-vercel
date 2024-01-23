@@ -17,14 +17,15 @@ const SequelizeStore = require("connect-session-sequelize");
 
 dotenv.config()
 const app = express()
-try {
-    await db.authenticate()
-    console.log("Database connected...")    
-    db.sync()
-}
- catch (error) {
-    console.log(error)    
-}
+(async () => {
+  try {
+    await db.authenticate();
+    console.log("Database connected...");
+    await db.sync();
+  } catch (error) {
+    console.error("Error connecting to the database:", error);
+  }
+})();
 app.use('/public/images', express.static(imagePath));
 
 const sessionStore = SequelizeStore(session.Store)
