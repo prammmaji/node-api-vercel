@@ -1,5 +1,4 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+
 import express from "express"
 import db from "./config/koneksi.js"
 // import router from "./routes/index.js"
