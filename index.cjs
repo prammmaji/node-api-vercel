@@ -1,5 +1,5 @@
 
-import express from "express"
+const express = require("express");
 import db from "./config/koneksi.js"
 // import router from "./routes/index.js"
 import dotenv from "dotenv"
