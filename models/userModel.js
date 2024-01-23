@@ -5,7 +5,7 @@ const db = require("../config/koneksi.js");
 
 const {DataTypes} = Sequelize
 
-const User = db.define('user', {
+const User = db.sequelize.define('user', {
     role: {
         type: DataTypes.STRING,
     },
