@@ -5,7 +5,7 @@ import Tagihan from "./tagihanModel.js"
 
 const { DataTypes } = Sequelize
 
-const Pembayaran = db.define('pembayaran',{
+export const Pembayaran = db.define('pembayaran',{
     
     uuid: {
         type: DataTypes.STRING,
@@ -39,5 +39,3 @@ User.hasMany(Pembayaran)
 Pembayaran.belongsTo(User, {foreignKey: 'userId'})
 Tagihan.hasMany(Pembayaran)
 Pembayaran.belongsTo(Tagihan, {foreignKey: 'tagihanId'})
-
-export default Pembayaran;
