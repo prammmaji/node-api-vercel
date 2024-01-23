@@ -3,7 +3,7 @@ import db from "../config/koneksi.js"
 import User from "./userModel.js"
 const {DataTypes} = Sequelize
 
-const Siswa = db.define('siswa', {
+export const Siswa = db.define('siswa', {
     uuid: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
@@ -35,5 +35,3 @@ const Siswa = db.define('siswa', {
 })
 User.hasOne(Siswa);
 Siswa.belongsTo(User, { foreignKey: 'userId' });
-
-export default Siswa;
